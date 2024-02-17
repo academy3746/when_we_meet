@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:when_we_meet/screens/home_screen.dart';
 
 void main() {
   runApp(const LoverApp());
@@ -17,7 +18,7 @@ class LoverApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       debugShowCheckedModeBanner: false,
-      home: Container(),
+      home: const HomeScreen(),
     );
   }
 }
