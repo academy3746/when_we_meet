@@ -11,7 +11,7 @@ class LoverApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'D-DAY',
+      title: 'When we met',
       theme: ThemeData(
         primaryColor: Colors.pinkAccent,
         useMaterial3: false,
