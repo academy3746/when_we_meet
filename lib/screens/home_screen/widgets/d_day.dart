@@ -3,11 +3,24 @@ import 'package:when_we_meet/common/constants/gaps.dart';
 import 'package:when_we_meet/common/constants/sizes.dart';
 
 class DayRemains extends StatelessWidget {
-  const DayRemains({super.key});
+  const DayRemains({
+    super.key,
+    required this.onHeartedPressed,
+    required this.firstDay,
+  });
+
+  final GestureTapCallback onHeartedPressed;
+
+  final DateTime firstDay;
 
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
+
+    var now = DateTime.now();
+
+    var dayWeMet =
+        DateTime(now.year, now.month, now.day).difference(firstDay).inDays + 1;
 
     return Column(
       children: [
@@ -23,13 +36,13 @@ class DayRemains extends StatelessWidget {
         ),
         Gaps.v16,
         Text(
-          '2024.02.17',
+          '${firstDay.year}. ${firstDay.month}. ${firstDay.day}',
           style: textTheme.bodyMedium,
         ),
         Gaps.v16,
         IconButton(
           iconSize: Sizes.size52,
-          onPressed: () {},
+          onPressed: onHeartedPressed,
           icon: const Icon(
             Icons.favorite,
             color: Colors.red,
@@ -37,7 +50,7 @@ class DayRemains extends StatelessWidget {
         ),
         Gaps.v16,
         Text(
-          'D+100',
+          'D+$dayWeMet',
           style: textTheme.displayMedium,
         ),
       ],
