@@ -5,14 +5,9 @@ class LoverImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.of(context).size.height / 2;
-
     return Expanded(
       child: Center(
-        child: Image.asset(
-          'assets/images/couple_image.png',
-          height: height,
-        ),
+        child: Image.asset('assets/images/couple_image.png'),
       ),
     );
   }
