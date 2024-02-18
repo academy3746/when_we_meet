@@ -15,7 +15,9 @@ class _HomeScreenState extends State<HomeScreen> {
   var firstDay = DateTime.now();
 
   void _onHeartedPressed() {
-    print('Moe Moe 뀽!');
+    setState(() {
+      firstDay = firstDay.subtract(const Duration(days: 1));
+    });
   }
 
   @override
