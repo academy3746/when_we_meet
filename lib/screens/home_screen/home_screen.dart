@@ -24,20 +24,16 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
-      body: SafeArea(
-        top: true,
-        bottom: false,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            DayRemains(
-              onHeartedPressed: _onHeartedPressed,
-              firstDay: firstDay,
-            ),
-            const LoverImage(),
-          ],
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          DayRemains(
+            onHeartedPressed: _onHeartedPressed,
+            firstDay: firstDay,
+          ),
+          const LoverImage(),
+        ],
       ),
     );
   }
