@@ -50,7 +50,8 @@ class DayRemains extends StatelessWidget {
         ),
         Gaps.v16,
         Text(
-          firstDay.day != now.day ? 'D+$dayWeMet' : 'D-DAY',
+          //firstDay.day != now.day ? 'D+$dayWeMet' : 'D-DAY',
+          'D+$dayWeMet',
           style: textTheme.displayMedium,
         )
       ],
