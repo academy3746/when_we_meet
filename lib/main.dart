@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:when_we_meet/common/constants/sizes.dart';
 import 'package:when_we_meet/screens/home_screen/home_screen.dart';
 
 void main() async {
@@ -18,6 +19,28 @@ class LoverApp extends StatelessWidget {
         primaryColor: const Color(0xFFFF80AB),
         useMaterial3: false,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        fontFamily: 'sunflower',
+        textTheme: const TextTheme(
+          displayLarge: TextStyle(
+            color: Colors.white,
+            fontSize: Sizes.size80,
+            fontWeight: FontWeight.w700,
+            fontFamily: 'parisienne',
+          ),
+          displayMedium: TextStyle(
+            color: Colors.white,
+            fontSize: Sizes.size50,
+            fontWeight: FontWeight.w700,
+          ),
+          bodyLarge: TextStyle(
+            color: Colors.white,
+            fontSize: Sizes.size30,
+          ),
+          bodyMedium: TextStyle(
+            color: Colors.white,
+            fontSize: Sizes.size20,
+          ),
+        ),
       ),
       debugShowCheckedModeBanner: false,
       home: const HomeScreen(),
