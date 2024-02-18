@@ -5,11 +5,11 @@ import 'package:when_we_meet/common/constants/sizes.dart';
 class DayRemains extends StatelessWidget {
   const DayRemains({
     super.key,
-    required this.onHeartedPressed,
+    required this.onHeartPressed,
     required this.firstDay,
   });
 
-  final GestureTapCallback onHeartedPressed;
+  final GestureTapCallback onHeartPressed;
 
   final DateTime firstDay;
 
@@ -42,7 +42,7 @@ class DayRemains extends StatelessWidget {
         Gaps.v16,
         IconButton(
           iconSize: Sizes.size52,
-          onPressed: onHeartedPressed,
+          onPressed: onHeartPressed,
           icon: const Icon(
             Icons.favorite,
             color: Colors.red,

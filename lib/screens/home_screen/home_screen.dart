@@ -1,6 +1,8 @@
 // ignore_for_file: avoid_print
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:when_we_meet/common/constants/sizes.dart';
 import 'package:when_we_meet/screens/home_screen/widgets/d_day.dart';
 import 'package:when_we_meet/screens/home_screen/widgets/lover_image.dart';
 
@@ -14,10 +16,29 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   var firstDay = DateTime.now();
 
-  void _onHeartedPressed() {
+  void onHeartPressed() {
+    /* For Debugging
     setState(() {
       firstDay = firstDay.subtract(const Duration(days: 1));
     });
+    */
+    showCupertinoDialog(
+      barrierDismissible: true,
+      context: context,
+      builder: (context) {
+        return Align(
+          alignment: Alignment.bottomCenter,
+          child: Container(
+            color: Colors.white,
+            height: Sizes.size300,
+            child: CupertinoDatePicker(
+              mode: CupertinoDatePickerMode.date,
+              onDateTimeChanged: (DateTime value) {},
+            ),
+          ),
+        );
+      },
+    );
   }
 
   @override
@@ -29,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           DayRemains(
-            onHeartedPressed: _onHeartedPressed,
+            onHeartPressed: onHeartPressed,
             firstDay: firstDay,
           ),
           const LoverImage(),
